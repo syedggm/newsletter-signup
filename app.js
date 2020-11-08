@@ -3,8 +3,6 @@ const bodyParser = require("body-parser");
 const request = require("request");
 const https = require("https");
 
-const api = "7580cf06e7938b341169edd980df1945-us18"
-const listid = "8f6094f9ee";
 
 const app = express();
 app.use(bodyParser.urlencoded({extended:true}));
@@ -30,10 +28,10 @@ app.post("/", function(req, res){
     ]
     }
     var jsonData = JSON.stringify(data);
-    const url = "https://us18.api.mailchimp.com/3.0/lists/8f6094f9ee";
+    const url = "https://us18.api.mailchimp.com/3.0/lists/";
     const options ={
         method: "POST",
-        auth: "gogeomart:7580cf06e7938b341169edd980df1945-us18"
+        auth: "gogeomart:"
     }
 const request = https.request(url, options,function(response){
     if (response.statusCode ===200){
